@@ -1,0 +1,6 @@
+board:
+  name: my_board
+  full_name: My board from scratch
+  vendor: NPCC
+  socs:
+  - name: mcxa156
