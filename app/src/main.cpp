@@ -1,4 +1,5 @@
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
@@ -11,20 +12,34 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
+namespace {
+    void test_driver()
+    {
+        const struct device *driver = DEVICE_DT_GET(DT_NODELABEL(our_driver0));
+
+        if (!device_is_ready(driver)) {
+            LOG_ERR("Our driver is not ready");
+            return;
+        }
+
+        int ret = sensor_sample_fetch(driver);
+        LOG_INF("sample_fetch returned %d", ret);
+
+        k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+
+        struct sensor_value value;
+        ret = sensor_channel_get(driver, SENSOR_CHAN_AMBIENT_TEMP, &value);
+        LOG_INF("channel_get returned %d", ret);
+
+        k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+    }
+}
+
 int main(void)
 {
-    bool led_state = true;
-
-    if (!gpio_is_ready_dt(&led)) return 0;
-
-    if (gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE) < 0) return 0;
 
     while (1) {
-        if (gpio_pin_toggle_dt(&led) < 0) return 0;
-
-        led_state = !led_state;
-        LOG_INF("LED state: %s", led_state ? "ON" : "OFF");
-        k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+        test_driver();
     }
     return 0;
 }

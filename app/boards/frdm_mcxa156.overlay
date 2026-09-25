@@ -1,4 +1,10 @@
 / {
+	our_driver0: our_driver {
+		compatible = "our,driver";
+		gpios = <&gpio3 0x0 GPIO_ACTIVE_LOW>;
+		status = "okay";
+	};
+
 	leds {
 		compatible = "gpio-leds";
 
