@@ -3,6 +3,8 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
+#include "our_driver.h"
+
 //#define SLEEP_TIME_MS 1000
 
 /* The devicetree node identifier for the "led0" alias. */
@@ -31,6 +33,10 @@ namespace {
         ret = sensor_channel_get(driver, SENSOR_CHAN_AMBIENT_TEMP, &value);
         LOG_INF("channel_get returned %d", ret);
 
+        k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+
+        ret = our_driver_toggle(driver);
+        LOG_INF("our_driver_toggle returned %d", ret);
         k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
     }
 }
