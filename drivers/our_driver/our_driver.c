@@ -37,14 +37,20 @@ static int channel_get(const struct device *dev,
                        struct sensor_value *value)
 {
     const struct our_driver_config *config = dev->config;
+    struct our_driver_data *data = dev->data;
 
     ARG_UNUSED(chan);
-    ARG_UNUSED(value);
+
+    if (value == NULL) {
+        return -EINVAL;
+    }
 
     int ret = gpio_pin_set_dt(&config->led, 0);
 
     if (ret == 0) {
-        ((struct our_driver_data *)dev->data)->led_state = false;
+        data->led_state = false;
+        value->val1 = data->led_state;
+        value->val2 = 0;
     }
 
     return ret;
@@ -100,35 +106,33 @@ static int init(const struct device *dev)
 
 DT_INST_FOREACH_STATUS_OKAY(OUR_DRIVER_DEFINE)
 
-/* Example from the lesson
-#include <zephyr/drivers/sensor.h>
-#include <zephyr/logging/log.h>
-
-#define DT_DRV_COMPAT our_driver
-
-LOG_MODULE_REGISTER(our_driver, LOG_LEVEL_INF);
-
-
-static int channel_get_my_implementation(const struct device *dev,
-    enum sensor_channel chan, struct sensor_value *val)
-    {
-        LOG_INF("channel_get_my_implementation called for channel %d", chan);
-
-        return 0;
+/* Lesson 7
+static int handler(const struct shell *sh, size_t argc, char **argv)
+{
+    const struct device *dev = shell_device_get_binding(argv[1]);
+    if (!dev) {
+        shell_error(sh, "Device not found: %s", argv[1]);
+        return -EFAULT;
     }
 
-static DEVICE_API(sensor, api_lecture) = {
-    .channel_get = channel_get_my_implementation,
-};
+    struct sensor_value value;
+    int ret = sensor_channel_get(dev, SENSOR_CHAN_ACCEL_X, &value);
 
+    if (ret) {
+        shell_error(sh, "Failed to get channel value: %d", ret);
+        return -EFAULT;
+    }
 
-static int init(const struct device *dev)
-{
-    LOG_INF("Initializing our_driver");
+    shell_info(sh, "%d", value.val1);
+
     return 0;
 }
 
-#define DEV_INST(inst) DEVICE_DT_INST_DEFINE(inst, init, NULL, NULL, NULL, POST_KERNEL, 80, &api_lecture);
 
-DT_INST_FOREACH_STATUS_OKAY(DEV_INST);
+SHELL_STATIC_SUBCMD_SET_CREATE(sub_our_driver,
+    SHELL_CMD_ARG(channel_get, NULL, "Get the channel value", handler, 2, 0),
+    SHELL_SUBCMD_SET_END
+);
+
+SHELL_CMD_REGISTER(our_driver, &sub_our_driver, "Our driver set of commands", NULL);
 */
