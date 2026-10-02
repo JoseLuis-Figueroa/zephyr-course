@@ -72,6 +72,27 @@ int our_driver_toggle(const struct device *dev)
     return ret;
 }
 
+int our_driver_set_state(const struct device *dev, int state)
+{
+    if (dev == NULL || state < 0 || state > 1) {
+        return -EINVAL;
+    }
+
+    if (!device_is_ready(dev)) {
+        return -ENODEV;
+    }
+
+    const struct our_driver_config *config = dev->config;
+    struct our_driver_data *data = dev->data;
+    int ret = gpio_pin_set_dt(&config->led, state);
+
+    if (ret == 0) {
+        data->led_state = state;
+    }
+
+    return ret;
+}
+
 static const DEVICE_API(sensor, our_driver_api) = {
     .sample_fetch = sample_fetch,
     .channel_get = channel_get,
