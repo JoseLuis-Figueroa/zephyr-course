@@ -1,0 +1,85 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      The target system is: Generic - 4.2.0 - posix
+      The host system is: Linux - 7.0.0-38-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/CMakeFiles/3.30.0/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/CMakeFiles/3.30.0/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
+      - "/home/jose-figueroa/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/kernel.cmake:135 (enable_language)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+      Copyright (C) 2023 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+...

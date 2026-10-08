@@ -1,0 +1,3 @@
+"cmsis_6":"/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/modules/hal/cmsis_6":"${ZEPHYR_CMSIS_6_CMAKE_DIR}"
+"hal_nxp":"/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/modules/hal/nxp":"${ZEPHYR_HAL_NXP_CMAKE_DIR}"
+"hal_stm32":"/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/modules/hal/stm32":"/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/modules/hal/stm32"
