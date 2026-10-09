@@ -1,0 +1,46 @@
+cmake:
+  application:
+    configuration-dir: '/home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/tests/ring_buf'
+    source-dir: '/home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/tests/ring_buf'
+  board:
+    name: 'native_sim'
+    path:
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/boards/native/native_sim'
+    qualifiers: 'native'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/bindings'
+    files:
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/boards/native/native_sim/native_sim.dts'
+    include-dirs:
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/modules/hal/nxp/dts'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/modules/hal/stm32/dts'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/include'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/include/zephyr'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/common'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/vendor'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/rx'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/x86'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/xtensa'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/sparc'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/riscv'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/posix'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/arm64'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/arm'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts/arc'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/dts'
+  kconfig:
+    files:
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/tests/ring_buf/prj.conf'
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/tests/ring_buf/prj.conf'
+  toolchain:
+    name: 'host'
+    path: ''
+  zephyr:
+    version: '4.2.0'
+    zephyr-base: '/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr'
+version: '0.1.0'

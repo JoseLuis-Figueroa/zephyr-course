@@ -345,6 +345,9 @@ NSI_DIR:PATH=/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/scri
 //Path to a program.
 OPENOCD:FILEPATH=/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr/zephyr-sdk-0.17.2/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
 
+//No help, variable specified on the command line.
+OVERLAY_CONFIG:UNINITIALIZED=/home/jose-figueroa/Documents/Zephyr/Iomico-course/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/twister/testsuite_extra.conf
+
 //Path to a program.
 PAHOLE:FILEPATH=PAHOLE-NOTFOUND
 
@@ -364,7 +367,7 @@ SOC_FULL_DIR:PATH=/home/jose-figueroa/Documents/Zephyr/Iomico-course/deps/zephyr
 TC_NAME:UNINITIALIZED=homework.unit.ring_buf
 
 //No help, variable specified on the command line.
-TC_RUNID:UNINITIALIZED=1c9c9dcdfcd7f35c4fc07dd43943ee60
+TC_RUNID:UNINITIALIZED=b66ea055c0ccbe965029a4ff11079706
 
 //True if toolchain supports newlib
 TOOLCHAIN_HAS_NEWLIB:BOOL=OFF
